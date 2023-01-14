@@ -1,4 +1,4 @@
-# global-recession-news-live-api
+# Global recession news API
 
 The Global Recession News Live API is a RESTful API showing the latest news about global recession from The New York Times, The Guardian, World Economic Forum, The Economist, AP News, Reuters, and Politico.
 
