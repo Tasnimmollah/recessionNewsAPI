@@ -15,3 +15,9 @@ Returns the latest articles from a specific publication based on the newspaperId
 ```bash
 GET https://globalrecession-news-live.onrender.com/news/:newspaperId
 ```
+
+## Available for free use on RapidAPI
+
+```bash
+https://rapidapi.com/Tasnimmo/api/global-recession-live/
+```
