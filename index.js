@@ -31,6 +31,17 @@ const newspapers = [
     address: "https://www.economist.com/recession",
     base: "https://www.economist.com",
   },
+  {
+    name: "reuters",
+    address: "https://www.reuters.com/markets/",
+    base: "https://www.reuters.com",
+  },
+  {
+    name: "apnews",
+    address:
+      "https://apnews.com/hub/business?utm_source=apnewsnav&utm_medium=navigation",
+    base: "https://apnews.com",
+  },
 ];
 const articles = [];
 
@@ -39,7 +50,7 @@ newspapers.forEach(async (newspaper) => {
   const $ = cheerio.load(data);
 
   $(
-    'a:contains("recession"), a:contains("inflation"), a:contains("crisis"), a:contains("crises"), a:contains("layoffs"), a:contains("cuts")',
+    'a:contains("recession"), a:contains("inflation"), a:contains("crisis"), a:contains("layoffs"), a:contains("lost"), a:contains("loss"), a:contains("risk"), a:contains("debt"), a:contains("cuts")',
     data
   ).each(function () {
     const title = $(this).text();
@@ -76,7 +87,7 @@ app.get("/news/:newspaperId", async (req, res) => {
     const specificArticles = [];
 
     $(
-      'a:contains("recession"), a:contains("inflation"), a:contains("crisis"), a:contains("layoffs"), a:contains("cuts")',
+      'a:contains("recession"), a:contains("inflation"), a:contains("crisis"), a:contains("layoffs"), a:contains("lost"), a:contains("loss"), a:contains("risk"), a:contains("debt"),a:contains("cuts")',
       data
     ).each(function () {
       const title = $(this).text();
